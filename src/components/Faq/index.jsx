@@ -4,12 +4,13 @@ import { ChevronUpIcon } from '@heroicons/react/20/solid'
 
 export default function Example() {
   return (
-    <div className="w-full px-4 pt-16">
-      <div className="mx-auto w-full max-w-md rounded-2xl bg-white p-2">
+    <div className="w-full px-4 py-16">
+      <h2 className="text-5xl font-semibold text-indigo-600 text-center mb-12">FAQ</h2>
+      <div className="mx-auto w-full max-w-2xl rounded-2xl bg-white py-2">
         <Disclosure>
           {({ open }) => (
             <>
-              <Disclosure.Button className="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+              <Disclosure.Button className="flex w-full justify-between rounded-lg bg-blue-900/20 px-4 py-2 text-left text-sm font-medium text-blue-600 hover:bg-blue-800/20 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
                 <span>What is your refund policy?</span>
                 <ChevronUpIcon
                   className={`${
@@ -24,11 +25,45 @@ export default function Example() {
             </>
           )}
         </Disclosure>
-        <Disclosure as="div" className="mt-2">
+        <Disclosure as="div" className="mt-6">
           {({ open }) => (
             <>
-              <Disclosure.Button className="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+              <Disclosure.Button className="flex w-full justify-between rounded-lg bg-blue-900/20 px-4 py-2 text-left text-sm font-medium text-blue-600 hover:bg-blue-800/20 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
                 <span>Do you offer technical support?</span>
+                <ChevronUpIcon
+                  className={`${
+                    open ? 'rotate-180 transform' : ''
+                  } h-5 w-5 text-purple-500`}
+                />
+              </Disclosure.Button>
+              <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
+                No.
+              </Disclosure.Panel>
+            </>
+          )}
+        </Disclosure>
+        <Disclosure as="div" className="mt-6">
+          {({ open }) => (
+            <>
+              <Disclosure.Button className="flex w-full justify-between rounded-lg bg-blue-900/20 px-4 py-2 text-left text-sm font-medium text-blue-600 hover:bg-blue-800/20 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                <span>Is this blog actually worth it?</span>
+                <ChevronUpIcon
+                  className={`${
+                    open ? 'rotate-180 transform' : ''
+                  } h-5 w-5 text-purple-500`}
+                />
+              </Disclosure.Button>
+              <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
+                No.
+              </Disclosure.Panel>
+            </>
+          )}
+        </Disclosure>
+        <Disclosure as="div" className="mt-6">
+          {({ open }) => (
+            <>
+              <Disclosure.Button className="flex w-full justify-between rounded-lg bg-blue-900/20 px-4 py-2 text-left text-sm font-medium text-blue-600 hover:bg-blue-800/20 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                <span>Are these questions really frequently asked?</span>
                 <ChevronUpIcon
                   className={`${
                     open ? 'rotate-180 transform' : ''

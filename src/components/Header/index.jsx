@@ -15,6 +15,8 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import Logo from '../../images/Logo/gatsbyBlog.png'
+import { Link } from "gatsby"
 
 const solutions = [
   {
@@ -82,16 +84,16 @@ export default function Example() {
   return (
     <Popover className="relative bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+        <div className="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-between md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <a href="#">
-              <span className="sr-only">Your Company</span>
+            <Link to="/">
+              <span className="sr-only">Gatsby Blog</span>
               <img
                 className="h-8 w-auto sm:h-10"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                src={Logo}
                 alt=""
               />
-            </a>
+            </Link>
           </div>
           <div className="-my-2 -mr-2 md:hidden">
             <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -100,7 +102,7 @@ export default function Example() {
             </Popover.Button>
           </div>
           <Popover.Group as="nav" className="hidden space-x-10 md:flex">
-            <Popover className="relative">
+            {/* <Popover className="relative">
               {({ open }) => (
                 <>
                   <Popover.Button
@@ -163,16 +165,19 @@ export default function Example() {
                   </Transition>
                 </>
               )}
-            </Popover>
+            </Popover> */}
 
-            <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
-              Pricing
-            </a>
-            <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
+            <Link to="/" className="text-base font-medium text-gray-500 hover:text-gray-900">
+              Home
+            </Link>
+            <Link to="/blogs" className="text-base font-medium text-gray-500 hover:text-gray-900">
+              Blogs
+            </Link>
+            {/* <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
               Docs
-            </a>
+            </a> */}
 
-            <Popover className="relative">
+            {/* <Popover className="relative">
               {({ open }) => (
                 <>
                   <Popover.Button
@@ -242,9 +247,9 @@ export default function Example() {
                   </Transition>
                 </>
               )}
-            </Popover>
+            </Popover> */}
           </Popover.Group>
-          <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
+          {/* <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
             <a href="#" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
               Sign in
             </a>
@@ -254,7 +259,7 @@ export default function Example() {
             >
               Sign up
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -267,15 +272,15 @@ export default function Example() {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        <Popover.Panel focus className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden">
+        <Popover.Panel focus className="absolute z-20 inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden">
           <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
             <div className="px-5 pt-5 pb-6">
               <div className="flex items-center justify-between">
                 <div>
                   <img
                     className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                    alt="Your Company"
+                    src={Logo}
+                    alt="Gatsby Blog"
                   />
                 </div>
                 <div className="-mr-2">
@@ -285,7 +290,7 @@ export default function Example() {
                   </Popover.Button>
                 </div>
               </div>
-              <div className="mt-6">
+              {/* <div className="mt-6">
                 <nav className="grid gap-y-8">
                   {solutions.map((item) => (
                     <a
@@ -298,18 +303,21 @@ export default function Example() {
                     </a>
                   ))}
                 </nav>
-              </div>
+              </div> */}
             </div>
             <div className="space-y-6 py-6 px-5">
-              <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
-                  Pricing
-                </a>
+              <div className="grid grid-rows-2 gap-y-4 gap-x-8">
+                <Link to="/" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                  Home
+                </Link>
+                <Link to="/blogs" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                  Blogs
+                </Link>
 
-                <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                {/* <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
                   Docs
-                </a>
-                {resources.map((item) => (
+                </a> */}
+                {/* {resources.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
@@ -317,9 +325,9 @@ export default function Example() {
                   >
                     {item.name}
                   </a>
-                ))}
+                ))} */}
               </div>
-              <div>
+              {/* <div>
                 <a
                   href="#"
                   className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
@@ -332,7 +340,7 @@ export default function Example() {
                     Sign in
                   </a>
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
         </Popover.Panel>
